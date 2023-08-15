@@ -1,0 +1,102 @@
+:root {
+  --orange: #ff7e00;
+  --red: #ff0000;
+  --black: #000000;
+  --light-white: #ffffffb5;
+
+  /* Fonts */
+  --cursive1: "Kalam", cursive;
+  --cursive2: "Tangerine", cursive;
+  --monospace: "Inconsolata", monospace;
+  --serif: "Roboto Slab", serif;
+  --san-serif-1: "Titillium Web", sans-serif;
+  --san-serif-2: "Ubuntu", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+.webpage {
+
+  padding: 1rem 3rem;
+  height: 100vh;
+}
+.glass {
+  height: 100%;
+  /* margin: 1rem; */
+  /* From https://css.glass */
+  background: rgba(255, 169, 169, 0.27);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border: 1px solid rgba(255, 169, 169, 0.85);
+  overflow-y: scroll;
+}
+.glass::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.glass::-webkit-scrollbar-track {
+}
+
+/* Handle */
+.glass::-webkit-scrollbar-thumb {
+  border-top-right-radius: 500px;
+  background: var(--orange);
+}
+
+/* Handle on hover */
+.glass::-webkit-scrollbar-thumb:hover {
+  background: var(--peal);
+}
+#front-page {
+  position: relative;
+  height: 100%;
+  /* padding: 1rem 1rem 0 1rem; */
+}
+nav {
+ padding-left: 2.5rem !important;
+ padding-right: 2.5rem !important;
+  /* background-color: rgba();
+  backdrop-filter: blur(2px); */
+}
+.brand-icon {
+  width: 40px;
+  margin-bottom: 2px
+}
+#sfit-logo {
+  margin-right: 10px;
+}
+.navbar-brand {
+  font-family: var(--serif);
+  font-size: 1.9rem;
+}
+.rainbow-neon {
+  /* z-index: -1000; */
+  background-image: linear-gradient(45deg, #f3626c45, #6181ff42, #a15bf242, #ffbf0043);
+  /* -webkit-text-fill-color: transparent; */
+  animation: rainbow-keyframe 3s linear infinite;
+}
+@keyframes rainbow-keyframe {
+  0% {
+     filter: hue-rotate(0deg);
+  }
+  100% {
+     filter: hue-rotate(360deg);
+  }
+}
+.nav-link {
+  font-family: var(--san-serif-2);
+  font-size: 1.3rem;
+}
+
+#itsa-logo {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#itsa-logo img {
+  width: 300px;
+}
