@@ -12,55 +12,44 @@
   --san-serif-1: "Titillium Web", sans-serif;
   --san-serif-2: "Ubuntu", sans-serif;
 }
+body {
+  position: relative;
+  color: rgb(233 233 233)
+}
 a {
   text-decoration: none;
 }
-.webpage {
-
-  padding: 1rem 3rem;
-  height: 100vh;
-}
-.glass {
-  height: 100%;
-  /* margin: 1rem; */
-  /* From https://css.glass */
-  background: rgba(255, 169, 169, 0.27);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(3.5px);
-  -webkit-backdrop-filter: blur(3.5px);
-  border: 1px solid rgba(255, 169, 169, 0.85);
-  overflow-y: scroll;
-}
-.glass::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Track */
-.glass::-webkit-scrollbar-track {
-}
-
-/* Handle */
-.glass::-webkit-scrollbar-thumb {
-  border-top-right-radius: 500px;
-  background: var(--orange);
-}
-
-/* Handle on hover */
-.glass::-webkit-scrollbar-thumb:hover {
-  background: var(--peal);
-}
 #front-page {
-  position: relative;
-  height: 100%;
-  /* padding: 1rem 1rem 0 1rem; */
+  height: 100vh;
 }
 nav {
  padding-left: 2.5rem !important;
  padding-right: 2.5rem !important;
   /* background-color: rgba();
   backdrop-filter: blur(2px); */
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.27);
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  /* border: 1px solid rgba(255, 169, 169, 0.85); */
 }
+.rainbow-neon {
+         font-size: 5rem;
+         background-image: linear-gradient(45deg, #f3626b, #6181ff, #a25bf2, #ffc100);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+         animation: rainbow-keyframe 3s linear infinite;
+      }
+      @keyframes rainbow-keyframe {
+         0% {
+            filter: hue-rotate(0deg);
+         }
+         100% {
+            filter: hue-rotate(360deg);
+         }
+      }
 .brand-icon {
   width: 40px;
   margin-bottom: 2px
@@ -69,28 +58,21 @@ nav {
   margin-right: 10px;
 }
 .navbar-brand {
-  font-family: var(--serif);
-  font-size: 1.9rem;
+  font-family: var(--monospace);
+  font-size: 2.1rem;
+  letter-spacing: 5px;
 }
-.rainbow-neon {
-  /* z-index: -1000; */
-  background-image: linear-gradient(45deg, #f3626c45, #6181ff42, #a15bf242, #ffbf0043);
-  /* -webkit-text-fill-color: transparent; */
-  animation: rainbow-keyframe 3s linear infinite;
+.navbar-brand::after{
+  content: "mazing";
+  font-size: 1.3rem;
 }
-@keyframes rainbow-keyframe {
-  0% {
-     filter: hue-rotate(0deg);
-  }
-  100% {
-     filter: hue-rotate(360deg);
-  }
+#particles-js {
+  z-index: -1000;
 }
 .nav-link {
   font-family: var(--san-serif-2);
   font-size: 1.3rem;
 }
-
 #itsa-logo {
   height: 100%;
   display: flex;
@@ -98,5 +80,73 @@ nav {
   align-items: center;
 }
 #itsa-logo img {
-  width: 300px;
+ width: 25rem;
+}
+
+#about-us {
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.597);
+  background: transparent;
+  /* border-radius: 16px; */
+  /* box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1); */
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  padding: 2rem 4rem;
+}
+.section-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  color: rgb(233 233 233);
+}
+#about-us hr {
+  color: rgb(238, 221, 221);
+  background-color: white;
+  height: 3px;
+}
+.about-us-info img{
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.48);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+}
+.about-us-info div.title {
+  font-family: var(--monospace);
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 2px 2px black;
+  margin-bottom: 2rem;
+}
+.about-us-info div.title h3 {
+  font-size: 2.3rem;
+}
+.about-us-info .about-itsa{
+  display: flex;
+  align-items: center;
+}
+.about-us-info .about-itsa p {
+  color: rgb(223, 223, 223);
+  font-family: var(--san-serif-2);
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 1050px) {
+  #about-us {
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 645px) {
+  nav.navbar {
+    padding: 1rem !important;
+  }
+  #itsa-logo img {
+    width: 20rem;
+   }
+}
+@media screen and (max-width: 476px) {
+  .navbar-brand::after{
+    content: "";
+  }
+  #about-us{
+    padding: 1rem;
+  }
 }
