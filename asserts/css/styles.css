@@ -16,6 +16,24 @@ body {
   position: relative;
   color: rgb(233 233 233);
 }
+/* Track */
+body::-webkit-scrollbar {
+  width: 6px;
+}
+body::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: rgb(167, 167, 167);
+  border-radius: 1px;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #ff7e00;
+}
 a {
   text-decoration: none;
 }
