@@ -16,8 +16,8 @@ canvas {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: #b71d1d;
-  background-image: linear-gradient(90deg, #000000, #ba0000);
+  background-color: black;
+  /* background-image: linear-gradient(90deg, #000000, #ba0000); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;

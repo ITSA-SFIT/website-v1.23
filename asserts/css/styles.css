@@ -39,6 +39,7 @@ a {
 }
 #front-page {
   height: 100vh;
+  background-image: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.711));
 }
 nav {
   padding-left: 2.5rem !important;
@@ -101,14 +102,17 @@ nav {
   width: 25rem;
 }
 
-#about-us {
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.597);
-  background: transparent;
-  /* border-radius: 16px; */
-  /* box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1); */
-  backdrop-filter: blur(3.5px);
+section.section {
+  padding: 3rem 4rem 6rem;
+  backdrop-filter: blur(4.5px);
   -webkit-backdrop-filter: blur(3.5px);
-  padding: 2rem 4rem;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.597);
+}
+
+/* ABOUT US */
+#about-us {
+  background: #00000005;
+  
 }
 .section-title {
   font-family: var(--serif);
@@ -133,9 +137,11 @@ nav {
   text-align: center;
   text-shadow: 2px 2px black;
   margin-bottom: 2rem;
+  color: #da0808;
 }
 .about-us-info div.title h3 {
   font-size: 2.3rem;
+  color: #ff0000;
 }
 .about-us-info .about-itsa {
   display: flex;
@@ -145,6 +151,34 @@ nav {
   color: rgb(223, 223, 223);
   font-family: var(--san-serif-2);
   font-size: 1.4rem;
+}
+#about-us .more-info {
+  margin-top: 1.5rem;
+}
+#about-us .more-info h3 {
+  /* color: #ff0000; */
+  transition: linear 0.2s;
+}
+#about-us .more-info-container {
+  padding: 1rem;
+  transition:linear 0.2s;
+}
+#about-us .more-info-container p {
+  font-size: 1.1rem;
+
+}
+#about-us .more-info img {
+  width: 100%;
+  aspect-ratio: 8/5;
+  border-radius: 5px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.48);
+  /* border: 1.5px solid rgba(255, 255, 255, 0.85); */
+}
+#about-us .more-info-container:hover {
+  transform: scale(1.1);
+}
+#about-us .more-info-container:hover > h3{
+  color: #ff0000;
 }
 
 @media screen and (max-width: 1050px) {
