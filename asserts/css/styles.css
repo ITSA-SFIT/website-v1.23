@@ -18,6 +18,7 @@
 body {
   position: relative;
   color: rgb(233 233 233);
+  scroll-behavior: smooth;
 }
 p {
   margin: 0;
