@@ -100,10 +100,12 @@ nav {
   z-index: -1000;
   position: fixed;
   width: 100vw;
+  height: 100vh;
   background-color: black;
 }
 #background-gif img {
-  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .nav-link {
