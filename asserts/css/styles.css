@@ -96,6 +96,16 @@ nav {
 #particles-js {
   z-index: -1000;
 }
+#background-gif {
+  z-index: -1000;
+  position: fixed;
+  width: 100vw;
+  background-color: black;
+}
+#background-gif img {
+  width: 100%;
+}
+
 .nav-link {
   font-family: var(--san-serif-2);
   font-size: 1.3rem;
