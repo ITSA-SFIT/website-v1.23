@@ -1,8 +1,10 @@
 :root {
   --orange: #ff7e00;
-  --red: #ff0000;
+  --red: rgba(255, 0, 0, 0.659);
   --black: #000000;
   --light-white: #ffffffb5;
+  --anchor: rgb(238, 212, 212);
+  --anchor-hover: color: rgb(150, 203, 156);
 
   /* Fonts */
   --cursive1: "Kalam", cursive;
@@ -11,10 +13,14 @@
   --serif: "Roboto Slab", serif;
   --san-serif-1: "Titillium Web", sans-serif;
   --san-serif-2: "Ubuntu", sans-serif;
+  --roboto: "Roboto Condensed", sans-serif;
 }
 body {
   position: relative;
   color: rgb(233 233 233);
+}
+p {
+  margin: 0;
 }
 /* Track */
 body::-webkit-scrollbar {
@@ -37,9 +43,11 @@ body::-webkit-scrollbar-thumb:hover {
 a {
   text-decoration: none;
 }
-#front-page {
+#home {
   height: 100vh;
-  background-image: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.711));
+  background-image: linear-gradient(90deg, transparent, var(--red));
+  /* background-image: linear-gradient(90deg, var(--red)20%, rgba(0, 0, 255, 0.626)); */
+  /* background-image: linear-gradient(90deg, rgba(60, 0, 100, 0.7), rgba(0, 0, 165, 0.709), rgba(0, 217, 255, 0.727), rgba(0, 255, 4, 0.661),rgba(255, 255, 0, 0.696), rgba(255, 166, 0, 0.713), var(--red)); */
 }
 nav {
   padding-left: 2.5rem !important;
@@ -98,27 +106,41 @@ nav {
   justify-content: center;
   align-items: center;
 }
-#itsa-logo img {
-  width: 25rem;
+#itsa-logo img.logo {
+  max-width: 25rem;
+}
+#itsa-logo span#x {
+  font-size: 10rem;
+  margin-left: 10px;
+  /* background-image: linear-gradient(90deg, var(--red), rgba(0, 0, 255, 0.621)); */
+}
+#itsa-logo span#x p {
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+  /* color: transparent; */
+  /* background: -webkit-linear-gradient(var(--red), rgba(0, 0, 255, 0.658));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
 }
 
 section.section {
   padding: 3rem 4rem 6rem;
   backdrop-filter: blur(4.5px);
   -webkit-backdrop-filter: blur(3.5px);
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.597);
 }
 
 /* ABOUT US */
-#about-us {
+#about {
   background: #00000005;
 }
 .section-title {
-  font-family: var(--serif);
+  text-align: center;
+  letter-spacing: 10px;
+  font-family: var(--roboto);
   font-weight: 600;
   color: rgb(233 233 233);
 }
-#about-us hr {
+#about hr {
   color: rgb(238, 221, 221);
   background-color: white;
   height: 3px;
@@ -142,6 +164,13 @@ section.section {
   font-size: 2.3rem;
   color: #ff0000;
 }
+.about-us-info div.title:hover h3,
+.about-us-info div.title:hover h4 {
+  color: white;
+  text-shadow: 0 0 1.5rem white, 0 0 3.5rem white, 0 0 5rem white,
+    0 0 7rem #ff0000, 0 0 4rem #ff0000, 0 0 5rem #ff0000, 0 0 6rem #ff0000,
+    0 0 7rem #ff0000;
+}
 .about-us-info .about-itsa {
   display: flex;
   align-items: center;
@@ -151,44 +180,48 @@ section.section {
   font-family: var(--san-serif-2);
   font-size: 1.4rem;
 }
-#about-us .more-info {
+#about .more-info {
   margin-top: 1.5rem;
 }
-#about-us .more-info h3 {
+#about .more-info h3 {
   /* color: #ff0000; */
   transition: linear 0.2s;
 }
-#about-us .more-info-container {
+#about .more-info-container {
   padding: 1rem;
+  color: rgb(206, 206, 206);
   transition: linear 0.2s;
 }
-#about-us .more-info-container p {
+#about .more-info-container p {
   font-size: 1.1rem;
 }
-#about-us .more-info img {
+#about .more-info img {
   width: 100%;
   aspect-ratio: 8/5;
   border-radius: 5px;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.48);
   /* border: 1.5px solid rgba(255, 255, 255, 0.85); */
 }
-#about-us .more-info-container:hover {
+#about .more-info-container:hover {
   transform: scale(1.1);
+  color: white;
 }
-#about-us .more-info-container:hover > h3 {
+#about .more-info-container:hover > h3 {
   color: #ff0000;
 }
 
 #events {
-  background-image: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.711));
+  background-image: linear-gradient(90deg, transparent, var(--red));
 }
-.carousel-container {
-  padding: 2rem 9rem 3rem 9rem;
+.carousel {
+  /* overflow-x: hidden; */
+  padding: 2rem 10vw 3rem 10vw;
 }
 .carousel-container-rel {
   position: relative;
 }
 .carousel-container img {
+  width:100%;
 }
 .carousel-container .carousel-info h3 {
   margin-top: 0.8rem;
@@ -227,8 +260,240 @@ section.section {
   justify-content: center;
   align-items: center;
 }
+
+/* Team */
+#team .team-division {
+  margin-bottom: 3rem;
+}
+#team .team-title {
+  text-align: center;
+  letter-spacing: 7px;
+  margin-bottom: 1rem;
+  font-family: var(--monospace);
+}
+/* #team .team-title::before {
+  content: "--------- ";
+}
+#team .team-title::after {
+  content: " ---------";
+} */
+#team .member-container .member-name {
+  font-size: 1.7rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 1rem;
+}
+#team .member-container .member-post {
+  text-align: center;
+  font-size: 1.5rem;
+  color: rgb(206, 206, 206);
+}
+#team .team-member.col-3 {
+  padding: 2rem 0;
+}
+
+#team .team-img-container {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+#team .team-img-container div {
+  background-color: rgba(66, 66, 66, 0.496);
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.48);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#team .team-img-container img {
+  width: 100%;
+}
+
+/* coordinators */
+#team .team-division.coordinator .team-img-container div {
+  background-image: linear-gradient(
+    0deg,
+    rgb(252, 248, 30, 0.6),
+    rgba(255, 179, 1, 0.6)
+  );
+}
+
+/* core */
+#team .team-division.core .team-img-container div {
+  background-image: linear-gradient(
+    180deg,
+    rgba(252, 60, 30, 0.6),
+    rgba(255, 162, 1, 0.6)
+  );
+}
+
+/* technical */
+#team .team-division.technical .team-img-container div {
+  background-image: linear-gradient(
+    0deg,
+    rgba(255, 0, 162, 0.6),
+    rgba(170, 1, 255, 0.6)
+  );
+}
+
+/* finance */
+#team .team-division.finance .team-img-container div {
+  background-image: linear-gradient(
+    0deg,
+    rgba(45, 153, 2, 0.6),
+    rgba(10, 232, 132, 0.6)
+  );
+}
+
+/* pr */
+#team .team-division.pr .team-img-container div {
+  background-image: linear-gradient(
+    180deg,
+    rgba(18, 140, 228, 0.6),
+    rgba(7, 12, 149, 0.6)
+  );
+}
+
+/* design */
+#team .team-division.design .team-img-container div {
+  background-image: linear-gradient(
+    0deg,
+    rgba(221, 2, 255, 0.6),
+    rgba(117, 10, 232, 0.6)
+  );
+}
+
+/* webmaster */
+#team .team-division.webmaster .team-img-container div {
+  background-image: linear-gradient(
+    135deg,
+    rgba(58, 255, 78, 0.817),
+    rgba(10, 188, 232, 0.848),
+    rgba(0, 0, 255)
+  );
+}
+
+/* documentation */
+#team .team-division.documentation .team-img-container div {
+  background-image: linear-gradient(
+    180deg,
+    rgba(249, 20, 188, 0.6),
+    rgba(232, 10, 114, 0.6)
+  );
+}
+
+/* Contact */
+#contact {
+  background-image: linear-gradient(90deg, transparent, var(--red));
+  padding: 3rem 4rem;
+}
+#contact .itsa-brand-footer {
+  display: flex;
+  align-items: center;
+}
+#contact footer h3 {
+  display: inline;
+  margin: 0 0.5rem 0 0;
+}
+#contact footer #itsa-footer-logo {
+  width: 3rem;
+}
+#contact span {
+  display: block;
+}
+#contact span.links a {
+  color: white;
+}
+#contact span.links {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+#contact p{
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+#contact .copyright p, #contact .acknowledgement p {
+  display: inline;
+  font-size: 0.9rem;
+  color: rgb(206, 206, 206);
+}
+#contact .acknowledgement {
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+#contact .acknowledgement a {
+  color: var(--anchor);
+}
+#contact .acknowledgement a:hover {
+  color: var(--anchor-hover);
+}
+
+#contact .bg-credit {
+  font-size: 0.9rem;
+}
+
+#contact .contact-details .col-2 {
+  justify-content: end;
+}
+
+#contact .contact-details .col {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+#contact .contact-details .col-2 .icon-container span {
+  font-size: 2rem;
+}
+
+#contact .contact-details .phone-no {
+  display: flex;
+  justify-content: space-between;
+}
+
+#contact .contact-details .mailid{
+  color: var(--anchor);
+  font-size: 1.1rem;
+}
+#contact .contact-details .mailid:hover{
+  color: var(--anchor-hover);
+}
+#embeded-map{
+  width: 100%;
+  height: 100%;
+}
+
+
+#contact .about-itsa-footer h4{
+  text-align: center;
+}
+#contact .about-itsa-footer p {
+  text-align: justify;
+}
+
+#contact .social-links {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+#contact .social-links a {
+  color: var(--anchor);
+ 
+}
+#contact .social-links a:hover {
+  color: var(--anchor-hover);
+}
+
+#contact .contact-division {
+  margin-bottom: 2rem;
+}
+
 @media screen and (max-width: 1050px) {
-  #about-us {
+  #about,
+  #events,
+  #team,
+  #contact {
     padding: 2rem;
   }
 }
@@ -239,12 +504,23 @@ section.section {
   #itsa-logo img {
     width: 20rem;
   }
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
 }
 @media screen and (max-width: 476px) {
   .navbar-brand::after {
     content: "";
   }
-  #about-us {
+  #about,
+  #events,
+  #team,
+  #contact {
     padding: 1rem;
+  }
+
+  #team .team-img-container {
+    padding: 0 4rem;
   }
 }
